@@ -86,6 +86,7 @@ all: help
 test:
 	@mkdir -p target/test
 	@mkdir -p target/report
+	@which go-junit-report > /dev/null || go get -u github.com/sectioneight/go-junit-report
 	GOPATH=$(GOPATH) \
 	go test \
 	-covermode=atomic \
